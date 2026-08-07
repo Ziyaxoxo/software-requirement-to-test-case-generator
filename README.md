@@ -86,12 +86,12 @@ This project solves that by grounding test generation in **actual project contex
 ### Data Flow / Pipeline
 
 ```
- ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────────┐
- │ Requirements  │ ──▶ │  Embedding    │ ──▶ │  RAG / FAISS  │ ──▶ │     LLM      │ ──▶ │ Generated Tests   │
- │  (SRS input)  │     │  Generation   │     │   Retrieval   │     │  Generation  │     │ (Unit/Integration/│
+ ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌────────────────────┐
+ │ Requirements │ ->  |  Embedding   │ ->  │  RAG / FAISS │ ->  │     LLM      │ ->  │ Generated Tests    │
+ │  (SRS input) │     │  Generation  │     │   Retrieval  │     │  Generation  │     │ (Unit/Integration/ │
  └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘     │  Edge/Boundary/    │
-        ▲                                          ▲                                   │  Security)         │
-        │                                          │                                   └──────────────────┘
+        ▲                                          ▲                                 │  Security)         │
+        │                                          │                                 └────────────────────┘
  ┌──────┴───────┐                          ┌───────┴─────-───┐
  │ Source Code  │                          │   API Docs      │
  │ (.zip / repo)│                          │(OpenAPI/Swagger)│
