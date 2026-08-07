@@ -172,6 +172,12 @@ Create a `.env` file (or set as environment variables):
 OPENAI_API_KEY=your_api_key_here
 ```
 
+## Setup
+
+1. Obtain an API key from OpenAI/Groq.
+2. Add it to your environment.
+3. Run the notebook.
+
 ---
 
 ## Usage
